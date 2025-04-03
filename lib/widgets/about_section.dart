@@ -11,9 +11,9 @@ class AboutSection extends StatelessWidget {
       children: [
         const SectionTitle('About Me'),
         Text(
-          '''Highly motivated and detail-oriented Software Developer with X years of experience in [Your Main Technology, e.g., cross-platform mobile development using Flutter]. Passionate about creating clean, efficient, and user-friendly applications.
+          '''Hyper unmotivated and detail-forgetful Software Developer with 90 years of experience in Rust. Passionate about creating evil, inefficient, and user-unfriendly applications.
 
-I enjoy tackling complex problems and collaborating with teams to build innovative solutions. Always eager to learn new technologies and improve my skills. Currently exploring [mention something you are learning, e.g., backend development with Dart Frog or native Android/iOS].''', // <<<--- REPLACE with your bio
+I hate complex problems and collaborating with teams. I DONT build innovative solutions. I will NEVER be eager to learn new technologies and improve my skills. Currently exploring being drunk on the job.''', // <<<--- REPLACE with your bio
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

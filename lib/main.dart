@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Your Name - CV', // Change this to your name
+      title: 'Nood.Dev', // Change this to your name
       theme: buildGruvboxDarkTheme(),
       debugShowCheckedModeBanner: false, // Disable debug banner
       home: const HomePage(),
