@@ -58914,12 +58914,12 @@ l=A.dM().$1$fontWeight(B.az)
 l=A.aiN(B.dL,B.b2,B.yS,new A.c9(A.yi(8),B.o),l)
 m=A.abY(s,s,s,s,s,s,s,s,s,B.jg,s,s,s,s,s,s,s,A.dM().$1$fontWeight(B.Q),s)
 n=A.yi(8)
-return new A.rr(B.zj,"Your Name - CV",r.Yw(B.vy,B.a1,B.dQ,new A.pJ(B.dQ,2,B.yO,new A.c9(n,new A.bR(B.fp,0.5,B.K,-1)),B.Hd,s),B.xg,B.xC,new A.mJ(l),B.z4,B.dJ,B.zs,B.zO,B.dL,B.b2,new A.nQ(m),k,A.ac5(new A.e7(B.fp,s,s,A.yi(4),s,s,B.bl),s,s,s,s,s,s,A.lF(s,s,B.a9,s,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s)),!1,s)}}
+return new A.rr(B.zj,"Nood.Dev",r.Yw(B.vy,B.a1,B.dQ,new A.pJ(B.dQ,2,B.yO,new A.c9(n,new A.bR(B.fp,0.5,B.K,-1)),B.Hd,s),B.xg,B.xC,new A.mJ(l),B.z4,B.dJ,B.zs,B.zO,B.dL,B.b2,new A.nQ(m),k,A.ac5(new A.e7(B.fp,s,s,A.yi(4),s,s,B.bl),s,s,s,s,s,s,A.lF(s,s,B.a9,s,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s)),!1,s)}}
 A.Aa.prototype={
 R(a){var s=null
 return new A.ty(A.yv(new A.fF(B.vS,new A.CQ(B.yT,A.hB(A.c([B.zi,B.di,B.vr,B.di,B.z0,B.di,B.He,B.di,B.EP,B.di,B.y7,B.Hc,B.z7],t.E),B.a4),s),s),s,s),s)}}
 A.xX.prototype={
-R(a){return A.hB(A.c([B.Fm,A.e0("Highly motivated and detail-oriented Software Developer with X years of experience in [Your Main Technology, e.g., cross-platform mobile development using Flutter]. Passionate about creating clean, efficient, and user-friendly applications.\n\nI enjoy tackling complex problems and collaborating with teams to build innovative solutions. Always eager to learn new technologies and improve my skills. Currently exploring [mention something you are learning, e.g., backend development with Dart Frog or native Android/iOS].",A.a3(a).p1.z)],t.E),B.a4)}}
+R(a){return A.hB(A.c([B.Fm,A.e0("Hyper unmotivated and detail-forgetful Software Developer with 90 years of experience in Rust. Passionate about creating evil, inefficient, and user-unfriendly applications.\n\nI hate complex problems and collaborating with teams. I DONT build innovative solutions. I will NEVER be eager to learn new technologies and improve my skills. Currently exploring being drunk on the job.",A.a3(a).p1.z)],t.E),B.a4)}}
 A.yU.prototype={
 mQ(a){return this.TD(a)},
 TD(a){var s=0,r=A.S(t.H)
