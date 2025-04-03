@@ -26,7 +26,7 @@ jobs:
       # IMPORTANT: Build for GitHub Project Page URL (username.github.io/repository_name/)
       # The base-href MUST match your repository name, surrounded by slashes.
       - name: Build Web App 🏗️
-        run: flutter build web --release --base-href /nooddev/
+        run: flutter build web --release --base-href /
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
