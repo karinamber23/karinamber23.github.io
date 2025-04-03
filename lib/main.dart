@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
-import 'package:nooddev/pages/home_page.dart'; // We will create this next
+// Remove import for home_page.dart if it exists
+// import 'package:nooddev/pages/home_page.dart';
+import 'package:nooddev/pages/main_layout.dart'; // Import the new layout
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Nood.Dev', // Change this to your name
+      title: 'Your Name - Portfolio', // Change this to your name
       theme: buildGruvboxDarkTheme(),
-      debugShowCheckedModeBanner: false, // Disable debug banner
-      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      // Use MainLayout as the home screen now
+      home: const MainLayout(),
     );
   }
 }

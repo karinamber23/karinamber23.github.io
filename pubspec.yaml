@@ -29,5 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   # Add assets folder if you plan to use local images (e.g., profile picture)
-  # assets:
-  #   - assets/images/
+  assets:
+    - assets/images/
+
+  
