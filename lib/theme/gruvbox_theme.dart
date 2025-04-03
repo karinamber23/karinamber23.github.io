@@ -76,9 +76,7 @@ ThemeData buildGruvboxDarkTheme() {
       secondary: GruvboxDark.aqua,
       onSecondary: GruvboxDark.bg, // Text on secondary buttons
       error: GruvboxDark.red,
-      onError: GruvboxDark.bg,
-      background: GruvboxDark.bg,
-      onBackground: GruvboxDark.fg, // Text on background
+      onError: GruvboxDark.bg, // Text on background
       surface: GruvboxDark.bg1, // Cards, dialogs background
       onSurface: GruvboxDark.fg, // Text on cards
       tertiary: GruvboxDark.yellow,
@@ -111,7 +109,7 @@ ThemeData buildGruvboxDarkTheme() {
       color: GruvboxDark.bg1,
        shape: RoundedRectangleBorder(
          borderRadius: BorderRadius.circular(8),
-         side: BorderSide(color: GruvboxDark.bg3, width: 0.5),
+         side: const BorderSide(color: GruvboxDark.bg3, width: 0.5),
        ),
        margin: const EdgeInsets.symmetric(vertical: 8.0),
     ),
@@ -130,7 +128,7 @@ ThemeData buildGruvboxDarkTheme() {
         color: GruvboxDark.bg3,
         borderRadius: BorderRadius.circular(4),
       ),
-      textStyle: TextStyle(color: GruvboxDark.fg),
+      textStyle: const TextStyle(color: GruvboxDark.fg),
     ),
     // Add other theme customizations as needed
   );
