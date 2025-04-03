@@ -1,12 +1,17 @@
 # .idx/dev.nix
-# Located at: /home/user/myapp/nood-leog.github.io/.idx/dev.nix
+# Located at: /home/user/nood-leog.github.io/.idx/dev.nix
 
 { pkgs, ... }: {
-  channel = "stable-24.05";
+  channel = "stable-24.05"; # or "unstable"
 
   packages = [
+    # ---> ADD FLUTTER SDK <---
+    pkgs.flutter
+
+    # JDK is needed if you ever plan to build for Android
     pkgs.jdk17
     pkgs.unzip
+    # Add other necessary system packages here
   ];
 
   env = {};
@@ -18,8 +23,10 @@
     ];
 
     workspace = {
+      # Optional: Add commands to run when workspace is created or started
+      # Example: ensure dependencies are installed
       onCreate = {
-        # install-deps = "flutter pub get"; # Uncomment if desired
+         install-deps = "flutter pub get";
       };
       # onStart = {
       #   update-deps = "flutter pub get";
@@ -32,16 +39,15 @@
         web = {
           command = ["flutter" "run" "--machine" "-d" "web-server" "--web-hostname" "0.0.0.0" "--web-port" "$PORT"];
           manager = "flutter";
-          # --- > ADD THIS LINE < ---
-          # Specifies the directory to run the command from, relative to the workspace root.
-          cwd = "./nood-leog.github.io";
+          # ---> REMOVE CWD - No longer needed as project is root <---
+          # cwd = "./nood-leog.github.io";
         };
 
         android = {
           command = ["flutter" "run" "--machine" "-d" "android" "-d" "localhost:5555"];
           manager = "flutter";
-          # --- > ADD THIS LINE FOR ANDROID TOO (Good Practice) < ---
-          cwd = "./nood-leog.github.io";
+          # ---> REMOVE CWD - No longer needed as project is root <---
+          # cwd = "./nood-leog.github.io";
         };
       };
     };
