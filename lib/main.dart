@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Your Name - Portfolio', // Change this to your name
+      title: 'Nood.dev', // Change this to your name
       theme: buildGruvboxDarkTheme(),
       debugShowCheckedModeBanner: false,
       // Use MainLayout as the home screen now
