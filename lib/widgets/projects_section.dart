@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nooddev/widgets/section_title.dart';
+//import 'package:nooddev/widgets/section_title.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
-import 'package:url_launcher/url_launcher.dart'; // Import url_launcher
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -11,29 +11,43 @@ class ProjectsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle('Projects'),
-        _buildProjectItem( // <<<--- REPLACE content for each project
-          context,
-          title: 'Awesome Flutter App',
-          description: 'A cross-platform mobile application built with Flutter demonstrating [mention key feature or technology]. Features include X, Y, and Z.',
-          technologies: ['Flutter', 'Firebase Auth', 'Firestore', 'Provider'],
-          url: 'https://github.com/your_username/your_repo', // Optional: Link to GitHub or live demo
-        ),
+        // Note: SectionTitle is handled by ProjectsPage now
+
+        // --- PROJECT 1 ---
         _buildProjectItem(
           context,
-          title: 'Personal Portfolio Website (This one!)',
-          description: 'My personal CV website built using Flutter Web and hosted on GitHub Pages. Features a custom Gruvbox Dark theme.',
-          technologies: ['Flutter Web', 'Dart', 'GitHub Pages'],
-          url: 'https://github.com/your_username/nooddev', // Link to this repo
+          title: 'VR Sorting Algorithm Game',
+          description: 'Developed a VR Sorting algorithm game. This project utilized unity and the google cardboard platform. The user is able to play and interact with the game, while being immersed in the environment. Designed to teach sorting algorithms interactively to the user in a fun and interactive environment.',
+          technologies: ['C#', 'HCI', 'Unity', 'GUI Design', 'Google Cardboard'],
+          // url: 'https://github.com/your_username/vr-sorting-repo', // Optional: Add repo link
         ),
+
+        // --- PROJECT 2 ---
+        _buildProjectItem(
+          context,
+          title: 'Car Sales App',
+          description: 'Developed a Car Sales app for a fictitious car dealership. The user is able to shop cars listed, viewing photos and relevant information that a buyer would want to see. A car salesman can alter listings the via a GUI interface, adjusting things like price, mileage ect. Other useful tools, like a parts catalog, work orders, and payment calculator were also included.',
+          technologies: ['Java', 'Java Swing', 'GUI Design', 'SQLite'],
+           // url: 'https://github.com/your_username/car-sales-repo', // Optional: Add repo link
+        ),
+
+        // --- PROJECT 3 ---
          _buildProjectItem(
           context,
-          title: 'Python Automation Script',
-          description: 'A script to automate [describe the task]. Improves efficiency by X%.',
-          technologies: ['Python', 'Pandas', 'Requests'],
-          // url: null, // No link needed if it's private/local
+          title: 'Guitar Shop Website',
+          description: 'Developed a Guitar Shop Website wherein the user is able to shop for products, place an order and gather any relevant information a buyer looking to shell out dough for an expensive Gibson 335 or sick Ibanez Bass Guitar.',
+          technologies: ['PHP', 'HTML/CSS', 'MVC framework', 'GUI Design', 'MySQL', 'WAMP', 'Netbeans'],
+           // url: 'https://github.com/your_username/guitar-shop-repo', // Optional: Add repo link
         ),
-        // Add more _buildProjectItem widgets
+
+        // --- THIS WEBSITE (Keep or Modify) ---
+         _buildProjectItem(
+          context,
+          title: 'Personal Portfolio Website (This one!)',
+          description: 'My personal CV website built using Flutter Web and hosted on GitHub Pages. Features a custom Gruvbox Dark theme and navigation.',
+          technologies: ['Flutter Web', 'Dart', 'GitHub Pages', 'Nix (for IDX)'],
+          url: 'https://github.com/nood-leog/nood-leog.github.io', // Link to this repo
+        ),
       ],
     );
   }
@@ -41,7 +55,6 @@ class ProjectsSection extends StatelessWidget {
   Future<void> _launchURL(String urlString) async {
     final Uri url = Uri.parse(urlString);
     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
-      // Could not launch the URL (optional: show a snackbar or log error)
       print('Could not launch $urlString');
     }
   }
@@ -61,23 +74,30 @@ class ProjectsSection extends StatelessWidget {
            children: [
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               crossAxisAlignment: CrossAxisAlignment.start, // Align top
                children: [
-                  Flexible( // Prevents title overflow if link icon is present
+                  Expanded( // Allow title to wrap if long
                     child: Text(
                       title,
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(color: GruvboxDark.brightGreen),
                     ),
                   ),
                  if (url != null)
-                   IconButton(
-                     icon: const Icon(Icons.link, color: GruvboxDark.blue),
-                     tooltip: 'View Project/Code',
-                     onPressed: () => _launchURL(url),
+                   Padding( // Add padding to space out the icon
+                     padding: const EdgeInsets.only(left: 8.0),
+                     child: IconButton(
+                       icon: const Icon(Icons.link, color: GruvboxDark.blue),
+                       tooltip: 'View Project/Code',
+                       onPressed: () => _launchURL(url),
+                       constraints: const BoxConstraints(), // Remove extra padding from IconButton
+                       padding: EdgeInsets.zero,
+                       iconSize: 20,
+                     ),
                    ),
                ],
              ),
              const SizedBox(height: 8),
-             Text(description, style: Theme.of(context).textTheme.bodyMedium),
+             Text(description, style: Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4)), // Add line height
              const SizedBox(height: 12),
              Wrap(
                spacing: 6.0,
@@ -87,7 +107,7 @@ class ProjectsSection extends StatelessWidget {
                  backgroundColor: GruvboxDark.bg3,
                  labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: GruvboxDark.fg2),
                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                 visualDensity: VisualDensity.compact, // Make chips smaller
+                 visualDensity: VisualDensity.compact,
                  side: BorderSide.none,
                )).toList(),
              ),

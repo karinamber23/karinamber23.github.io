@@ -6,59 +6,41 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Access theme data once for cleaner code if needed multiple times
-    // final textTheme = Theme.of(context).textTheme;
-
-    return Column( // Main column for the entire section
-      crossAxisAlignment: CrossAxisAlignment.start, // Align items to the start (left)
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Row for horizontal layout of Avatar and Name
         Row(
-          crossAxisAlignment: CrossAxisAlignment.center, // Align items vertically in the middle of the row
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Profile Picture
             const CircleAvatar(
-              radius: 50, // Adjust size as desired
-              backgroundColor: GruvboxDark.bg3, // Fallback background if image fails
-              // Correct path to the image asset (relative to project root)
-              // Make sure 'assets/images/' is declared in pubspec.yaml
-              backgroundImage: AssetImage('assets/images/cat300x300.jpg'),
+              radius: 50,
+              backgroundColor: GruvboxDark.bg3,
+              backgroundImage: AssetImage('assets/images/cat300x300.jpg'), // Assuming this path is correct
             ),
-
-            // Spacing between avatar and text
             const SizedBox(width: 20),
-
-            // Name Text
             Text(
-              'nood-leog', // Your name or desired text
+              // --- UPDATED NAME ---
+              'Alex Boyce',
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
                 color: GruvboxDark.fg,
-                // Optional: Adjust font size slightly if needed
-                // fontSize: 40,
               ),
             ),
           ],
         ),
-
-        // Vertical spacing after the Avatar/Name row
-        const SizedBox(height: 25), // Adjusted spacing
-
-        // Tagline/Subtitle Text
+        const SizedBox(height: 25),
         Text(
-          'Software Developer | Flutter Enthusiast | Lifelong Learner', // Your tagline
+          // --- KEEP OR UPDATE TAGLINE ---
+          'Aspiring Engineer | Relentlessly curious | Lifelong Learner',
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            color: GruvboxDark.aqua, // Using aqua highlight color
+            color: GruvboxDark.aqua,
           ),
         ),
-
-        // Vertical spacing before the welcome message
         const SizedBox(height: 16),
-
-        // Welcome Message Text
         Text(
-           'Welcome to my personal corner of the web. Here you can find information about my work, projects, and how to get in touch.', // Your welcome text
+          // --- KEEP OR UPDATE WELCOME MESSAGE ---
+           'Welcome to my personal corner of the web. Here you can find information about my work, projects, and how to get in touch. Maybe you can find some pictures of my cats if you poke around too :)',
            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-             color: GruvboxDark.fg2, // Slightly dimmer text color
+             color: GruvboxDark.fg2,
            ),
          ),
       ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nooddev/widgets/section_title.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Using FontAwesome
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
 
 class ContactSection extends StatelessWidget {
@@ -18,7 +18,7 @@ class ContactSection extends StatelessWidget {
      final Uri emailLaunchUri = Uri(
        scheme: 'mailto',
        path: email,
-       query: 'subject=Contact%20from%20Portfolio%20Website', // Optional: prefill subject
+       query: 'subject=Contact%20from%20Portfolio%20Website',
      );
      if (!await launchUrl(emailLaunchUri)) {
        print('Could not launch email to $email');
@@ -27,23 +27,22 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // <<<--- REPLACE with your details
-    const String email = 'your.email@example.com';
-    const String githubUrl = 'https://github.com/your_username';
-    const String linkedinUrl = 'https://linkedin.com/in/your_profile';
-    // Add other profiles like Twitter, etc.
-    // const String twitterUrl = 'https://twitter.com/your_handle';
+    // --- UPDATED DETAILS ---
+    const String email = 'alex@nood.dev';
+    const String githubUrl = 'https://github.com/nood-leog';
+    const String linkedinUrl = 'https://linkedin.com/in/nood-leog';
+    // const String websiteUrl = 'https://nood.dev'; // Website link is usually in AppBar/Footer
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SectionTitle('Get In Touch'),
         Text(
-          "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to connect with me!", // <<<--- REPLACE if desired
+          "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to connect with me!", // Keep or update
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(height: 20),
-        Wrap( // Use Wrap for responsiveness of icons
+        Wrap(
           spacing: 15.0,
           runSpacing: 10.0,
           children: <Widget>[
@@ -56,25 +55,25 @@ class ContactSection extends StatelessWidget {
             ),
             _buildContactButton(
               context,
-              icon: FontAwesomeIcons.github, // Using FontAwesome
+              icon: FontAwesomeIcons.github,
               label: 'GitHub',
               tooltip: 'View GitHub Profile',
               onPressed: () => _launchURL(githubUrl),
             ),
              _buildContactButton(
               context,
-              icon: FontAwesomeIcons.linkedin, // Using FontAwesome
+              icon: FontAwesomeIcons.linkedin,
               label: 'LinkedIn',
               tooltip: 'View LinkedIn Profile',
               onPressed: () => _launchURL(linkedinUrl),
             ),
-            // Add more buttons for other profiles
+            // Optional: Add website button if desired, though redundant with AppBar
             // _buildContactButton(
             //   context,
-            //   icon: FontAwesomeIcons.twitter,
-            //   label: 'Twitter',
-            //   tooltip: 'View Twitter Profile',
-            //   onPressed: () => _launchURL(twitterUrl),
+            //   icon: FontAwesomeIcons.link,
+            //   label: 'Website',
+            //   tooltip: 'Visit nood.dev',
+            //   onPressed: () => _launchURL(websiteUrl),
             // ),
           ],
         ),
@@ -91,7 +90,7 @@ class ContactSection extends StatelessWidget {
     return Tooltip(
       message: tooltip,
       child: TextButton.icon(
-        icon: FaIcon(icon, size: 20, color: GruvboxDark.aqua), // Use FaIcon for FontAwesome
+        icon: FaIcon(icon, size: 20, color: GruvboxDark.aqua),
         label: Text(label),
         style: TextButton.styleFrom(
           foregroundColor: GruvboxDark.fg2,

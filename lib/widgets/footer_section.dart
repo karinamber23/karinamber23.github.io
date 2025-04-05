@@ -8,7 +8,7 @@ class FooterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        '© ${DateTime.now().year} Your Name. Built with Flutter.', // <<<--- REPLACE Your Name
+        '© ${DateTime.now().year} Alex Boyce. Built with Flutter on github pages.', 
         style: Theme.of(context).textTheme.bodySmall?.copyWith(
           color: GruvboxDark.fg4,
         ),

@@ -11,10 +11,9 @@ class AboutSection extends StatelessWidget {
       children: [
         const SectionTitle('About Me'),
         Text(
-          '''Hyper unmotivated and detail-forgetful Software Developer with 90 years of experience in Rust. Passionate about creating evil, inefficient, and user-unfriendly applications.
-
-I hate complex problems and collaborating with teams. I DONT build innovative solutions. I will NEVER be eager to learn new technologies and improve my skills. Currently exploring being drunk on the job.''', // <<<--- REPLACE with your bio
-          style: Theme.of(context).textTheme.bodyMedium,
+          // --- PASTE YOUR CHOSEN OPTION HERE ---
+          '''Currently pursuing dual Bachelor's degrees in Computer Science and Psychology at Central Washington University (CWU), I'm passionate about the intersection of technology and human experience. Complementing my studies, I gain practical insights working as a SOC/NOC Analyst, navigating real-world network operations and cybersecurity challenges. I'm particularly fascinated by the intricacies of firmware development and the immersive potential of XR design and technologies. Outside of the digital realm, I've recently started learning guitar and enjoy the company of my two cats.''',
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.5), // Added line height for readability
         ),
       ],
     );

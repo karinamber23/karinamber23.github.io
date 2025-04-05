@@ -5,14 +5,13 @@ import 'package:nooddev/widgets/experience_section.dart';
 import 'package:nooddev/widgets/footer_section.dart';
 import 'package:nooddev/widgets/hero_section.dart';
 import 'package:nooddev/widgets/skills_section.dart';
+import 'package:nooddev/widgets/education_section.dart'; // <-- IMPORT
 
-// This widget now holds the content specifically for the CV/Homepage
 class CvPage extends StatelessWidget {
   const CvPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Use Center and ConstrainedBox like before to limit width
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 900),
@@ -25,14 +24,15 @@ class CvPage extends StatelessWidget {
               const SizedBox(height: 40),
               const AboutSection(),
               const SizedBox(height: 40),
+              const EducationSection(), // <-- ADD EDUCATION SECTION HERE
+              const SizedBox(height: 40),
               const ExperienceSection(),
               const SizedBox(height: 40),
               const SkillsSection(),
-              // Note: ProjectsSection is removed from here
               const SizedBox(height: 40),
               const ContactSection(),
               const SizedBox(height: 50),
-              const FooterSection(), // Footer remains part of the CV page for now
+              const FooterSection(),
             ],
           ),
         ),
