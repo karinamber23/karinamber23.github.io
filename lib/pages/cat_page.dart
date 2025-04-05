@@ -46,7 +46,7 @@ class CatPage extends StatelessWidget {
               const SizedBox(height: verticalSpacing),
 
               // Image 1
-              _buildCatImage('images/cats/1.jpg'),
+              _buildCatImage('assets/images/cats/1.jpg'),
               const SizedBox(height: imageSpacing),
 
               // Paragraph 2
@@ -57,7 +57,7 @@ class CatPage extends StatelessWidget {
               const SizedBox(height: verticalSpacing),
 
               // Image 2
-              _buildCatImage('images/cats/2.jpg'),
+              _buildCatImage('assets/images/cats/2.jpg'),
               const SizedBox(height: imageSpacing),
 
               // Paragraph 3
@@ -75,7 +75,7 @@ class CatPage extends StatelessWidget {
                  return Padding(
                    // Add padding below each image in the gallery part
                    padding: const EdgeInsets.only(bottom: imageSpacing + 5), // একটু বেশি ফাঁক
-                   child: _buildCatImage('images/cats/$imageNumber.jpg'),
+                   child: _buildCatImage('assets/images/cats/$imageNumber.jpg'),
                  );
               }),
 

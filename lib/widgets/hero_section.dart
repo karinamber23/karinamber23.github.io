@@ -15,7 +15,7 @@ class HeroSection extends StatelessWidget {
             const CircleAvatar(
               radius: 50,
               backgroundColor: GruvboxDark.bg3,
-              backgroundImage: AssetImage('assets/images/cat300x300.jpg'), // Assuming this path is correct
+              backgroundImage: AssetImage('assets/images/headshot.jpg'), // Assuming this path is correct
             ),
             const SizedBox(width: 20),
             Text(

@@ -13,9 +13,8 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  int _selectedIndex = 0; // Index of the currently selected page
+  int _selectedIndex = 0;
 
-  // List of the pages corresponding to the navigation items
   static const List<Widget> _pages = <Widget>[
     CvPage(),
     ProjectsPage(),
@@ -23,7 +22,6 @@ class _MainLayoutState extends State<MainLayout> {
     CatPage(),
   ];
 
-  // List of navigation item labels
   static const List<String> _pageTitles = <String>[
     'CV',
     'Projects',
@@ -40,15 +38,43 @@ class _MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final bool isWideScreen = MediaQuery.of(context).size.width > 600; // Example breakpoint
+    final bool isWideScreen = MediaQuery.of(context).size.width > 600;
+
+    // --- Define your icon path here ---
+    const String appBarIconPath = 'images/gilbertdrawing.png'; // <<<--- REPLACE WITH YOUR ICON PATH
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-           'nood.dev', // Your site name/brand
-           style: textTheme.titleLarge?.copyWith(color: GruvboxDark.brightAqua),
+        // --- MODIFIED TITLE SECTION ---
+        title: Row(
+          mainAxisSize: MainAxisSize.min, // Prevent Row from expanding unnecessarily
+          crossAxisAlignment: CrossAxisAlignment.center, // Vertically align text and icon
+          children: [
+            // Your site name text
+            Text(
+              'nood.dev',
+              style: textTheme.titleLarge?.copyWith(color: GruvboxDark.brightAqua),
+            ),
+            // Spacing between text and icon
+            const SizedBox(width: 8),
+            // Your icon image
+            Image.asset(
+              appBarIconPath,
+              height: 28, // Adjust height as needed for AppBar size
+              // Optional: Add error builder in case the image fails to load
+              errorBuilder: (context, error, stackTrace) {
+                // Display a placeholder icon on error
+                return Icon(
+                  Icons.image_not_supported_outlined, // Or another fallback icon
+                  color: GruvboxDark.fg4,
+                  size: 28, // Match the height
+                );
+              },
+            ),
+          ],
         ),
-        // Place navigation items in the 'actions' for right alignment
+        // --- END MODIFIED TITLE SECTION ---
+
         actions: List.generate(_pageTitles.length, (index) {
           final bool isSelected = _selectedIndex == index;
           return Padding(
@@ -57,8 +83,6 @@ class _MainLayoutState extends State<MainLayout> {
               onPressed: () => _onItemTapped(index),
               style: TextButton.styleFrom(
                 foregroundColor: isSelected ? GruvboxDark.brightOrange : GruvboxDark.fg2,
-
-
                 textStyle: textTheme.labelLarge?.copyWith(
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                    fontSize: isWideScreen ? 16 : 14,
@@ -73,7 +97,6 @@ class _MainLayoutState extends State<MainLayout> {
           );
         }),
       ),
-      // Display the currently selected page using IndexedStack to preserve state
       body: IndexedStack(
          index: _selectedIndex,
          children: _pages,
