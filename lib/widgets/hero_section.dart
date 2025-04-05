@@ -30,7 +30,7 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 25),
         Text(
           // --- KEEP OR UPDATE TAGLINE ---
-          'Aspiring Something Engineer | Relentlessly Curious | Lifelong Learner',
+          'Aspiring Something Engineer | Relentlessly Curious',
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             color: GruvboxDark.aqua,
           ),
