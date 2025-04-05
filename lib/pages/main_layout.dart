@@ -41,7 +41,7 @@ class _MainLayoutState extends State<MainLayout> {
     final bool isWideScreen = MediaQuery.of(context).size.width > 600;
 
     // --- Define your icon path here ---
-    const String appBarIconPath = 'images/gilbertdrawing.png'; // <<<--- REPLACE WITH YOUR ICON PATH
+    const String appBarIconPath = 'assets/images/gilbertdrawing.png'; // <<<--- REPLACE WITH YOUR ICON PATH
 
     return Scaffold(
       appBar: AppBar(
