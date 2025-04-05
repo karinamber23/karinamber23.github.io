@@ -64343,7 +64343,7 @@ aq(){return new A.Jb()}}
 A.Jb.prototype={
 XN(a){this.aw(new A.a6c(this,a))},
 L(a){var s=null,r=A.Y(a).p1,q=A.cF(a,s,t.w).w,p=r.r
-p=A.vd(A.c([A.bO("nood.dev",p==null?s:p.bC(B.jU),s),B.Iy,A.afu("images/gilbertdrawing.png",new A.a6e(),s,28)],t.p),B.aV,B.K,B.es)
+p=A.vd(A.c([A.bO("nood.dev",p==null?s:p.bC(B.jU),s),B.Iy,A.afu("assets/images/gilbertdrawing.png",new A.a6e(),s,28)],t.p),B.aV,B.K,B.es)
 q=A.abC(4,new A.a6f(this,q.a.a>600,r),!0,t.l7)
 return new A.ve(new A.qR(p,q,new A.Ki(s,s,1/0,56),s),new A.CH(this.d,B.Cw,s),s)}}
 A.a6c.prototype={
@@ -64436,7 +64436,7 @@ A.Cq.prototype={
 L(a){var s,r,q=null,p=A.Y(a).p1.b,o=t.p
 p=A.vd(A.c([B.xX,B.Ix,A.bO("Alex Boyce",p==null?q:p.bC(B.ae),q)],o),B.aV,B.K,B.db)
 s=A.Y(a).p1.f
-s=A.bO("Aspiring Engineer | Relentlessly Curious | Lifelong Learner",s==null?q:s.bC(B.cL),q)
+s=A.bO("Aspiring Something Engineer | Relentlessly Curious | Lifelong Learner",s==null?q:s.bC(B.cL),q)
 r=A.Y(a).p1.y
 return A.dy(A.c([p,B.eW,s,B.vg,A.bO("Welcome to my personal corner of the web. Here you can find information about my work, projects, and how to get in touch. Maybe you can find some pictures of my cats if you poke around too :)",r==null?q:r.bC(B.bh),q)],o),B.M,B.K)}}
 A.E3.prototype={
