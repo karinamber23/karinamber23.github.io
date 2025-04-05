@@ -64319,18 +64319,18 @@ L(a){var s,r,q,p,o,n,m=null,l=A.Y(a).p1,k=l.c
 k=A.bO("Cat Pics",k==null?m:k.bC(B.fM),m)
 s=l.y
 s=A.EQ(m,m,m,B.cp,m,m,!0,m,A.pa(B.CC,s==null?m:s.yJ(B.bh,1.5),m),B.at,m,m,B.a2,B.au)
-r=this.vC("assets/images/cats/1.jpg")
+r=this.vC("icons/cats/1.jpg")
 q=l.z
 p=q==null
 o=A.bO("Meet Kipper (grey) and Gillbert (salt-and-pepper). When this photo was taken, Kipper was 11 months and Gillbert was 4 months",p?m:q.yJ(B.bg,1.4),m)
-n=this.vC("assets/images/cats/2.jpg")
+n=this.vC("icons/cats/2.jpg")
 k=A.c([k,B.Iz,s,B.eW,r,B.vf,o,B.eW,n,B.vf,A.bO('Kipper and Gillberts names both stem from a fish theme, dispite the fact that fish is a rare treat for cats in the wild. Kippers are a "traditional dish produced by cold-smoking Atlantic herring over wooden oak chips" and Gillberts namesake being... Gill... from a fish.',p?m:q.yJ(B.bg,1.4),m),B.eW],t.p)
 B.b.K(k,A.abC(19,new A.Pr(this),!0,t.l7))
 k.push(B.IB)
 return A.jk(new A.e8(B.fk,A.ac6(A.dy(k,B.M,B.K),B.fX),m),m,m)},
 vC(a){return new A.AW(A.ns(8),A.afu(a,new A.Pq(),B.iX,null),null)}}
 A.Pr.prototype={
-$1(a){return new A.bN(B.e5,this.a.vC("assets/images/cats/"+(a+3)+".jpg"),null)},
+$1(a){return new A.bN(B.e5,this.a.vC("icons/cats/"+(a+3)+".jpg"),null)},
 $S:149}
 A.Pq.prototype={
 $3(a,b,c){var s=null
@@ -64436,7 +64436,7 @@ A.Cq.prototype={
 L(a){var s,r,q=null,p=A.Y(a).p1.b,o=t.p
 p=A.vd(A.c([B.xX,B.Ix,A.bO("Alex Boyce",p==null?q:p.bC(B.ae),q)],o),B.aV,B.K,B.db)
 s=A.Y(a).p1.f
-s=A.bO("Aspiring Something Engineer | Relentlessly Curious | Lifelong Learner",s==null?q:s.bC(B.cL),q)
+s=A.bO("Aspiring Something Engineer | Relentlessly Curious",s==null?q:s.bC(B.cL),q)
 r=A.Y(a).p1.y
 return A.dy(A.c([p,B.eW,s,B.vg,A.bO("Welcome to my personal corner of the web. Here you can find information about my work, projects, and how to get in touch. Maybe you can find some pictures of my cats if you poke around too :)",r==null?q:r.bC(B.bh),q)],o),B.M,B.K)}}
 A.E3.prototype={
