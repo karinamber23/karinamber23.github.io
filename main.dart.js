@@ -64387,7 +64387,7 @@ case 2:if(!c)A.jc("Could not launch email to "+a)
 return A.Q(null,r)}})
 return A.R($async$qH,r)},
 L(a){var s=this,r=t.p
-return A.dy(A.c([B.GO,A.bO("I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to connect with me!",A.Y(a).p1.z,null),B.vh,A.acs(A.c([s.vD(a,B.Ac,"Email",new A.PW(s),"alex@nood.dev"),s.vD(a,B.A9,"GitHub",new A.PX(s),"View GitHub Profile"),s.vD(a,B.A8,"LinkedIn",new A.PY(s),"View LinkedIn Profile")],r),10,15)],r),B.M,B.K)},
+return A.dy(A.c([B.GO,A.bO("I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to shoot me a message!",A.Y(a).p1.z,null),B.vh,A.acs(A.c([s.vD(a,B.Ac,"Email",new A.PW(s),"alex@nood.dev"),s.vD(a,B.A9,"GitHub",new A.PX(s),"View GitHub Profile"),s.vD(a,B.A8,"LinkedIn",new A.PY(s),"View LinkedIn Profile")],r),10,15)],r),B.M,B.K)},
 vD(a,b,c,d,e){var s=null
 return A.acl(A.arP(new A.C1(b,20,B.cL,s),A.bO(c,s,s),d,A.ace(s,s,s,s,s,s,s,s,s,B.bh,s,s,B.k5,s,s,s,s,A.Y(a).p1.z,s)),e)}}
 A.PW.prototype={
