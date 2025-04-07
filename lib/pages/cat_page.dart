@@ -1,41 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:nooddev/theme/gruvbox_theme.dart'; // For theme colors
+import 'package:nooddev/theme/gruvbox_theme.dart'; //theme colors
 
-class CatPage extends StatelessWidget {
+class CatPage extends StatelessWidget 
+{
   const CatPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     final textTheme = Theme.of(context).textTheme;
-    const double verticalSpacing = 25.0; // Consistent spacing
+    const double verticalSpacing = 25.0; // Consistent vertical spacing
     const double imageSpacing = 15.0;    // Spacing after images
 
     return Center( // Keep content centered horizontally
-      child: ConstrainedBox( // Limit max width like other pages
+      child: ConstrainedBox
+      ( // Limit max width
         constraints: const BoxConstraints(maxWidth: 900),
-        child: SingleChildScrollView( // Allow scrolling
+        child: SingleChildScrollView
+        ( // scrolling
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 30.0),
-          child: Column(
+          child: Column
+          (
             crossAxisAlignment: CrossAxisAlignment.start, // Align text left
-            children: [
+            children: 
+            [
               // Page Title
-              Text(
+              Text
+              (
                 'Cat Pics',
-                style: textTheme.displaySmall?.copyWith(
+                style: textTheme.displaySmall?.copyWith
+                (
                   color: GruvboxDark.brightOrange, // Highlight color
                 ),
               ),
               const SizedBox(height: verticalSpacing / 2),
 
               // Introductory Paragraph 1 (using RichText for bold)
-              RichText(
-                text: TextSpan(
+              RichText
+              (
+                text: TextSpan
+                (
                   // Default style for this paragraph from the theme
                   style: textTheme.bodyLarge?.copyWith(height: 1.5, color: GruvboxDark.fg2),
-                  children: const <TextSpan>[
+                  children: const <TextSpan>
+                  [
                     TextSpan(text: "Its long been debated as to the best thing to do when getting started building a website. Optimize your content? Tweak the design? No, of course not! The only correct option is to flood it with as many cat pictures as humanly possible. After all, what’s the internet without an abundance of "),
                     // Apply bold style specifically to "FIPO"
-                    TextSpan(
+                    TextSpan
+                    (
                       text: 'Food In Poop Out (FIPO)',
                       style: TextStyle(fontWeight: FontWeight.bold, color: GruvboxDark.fg) // Inherits size/family, overrides weight/color
                     ),
@@ -50,7 +62,8 @@ class CatPage extends StatelessWidget {
               const SizedBox(height: imageSpacing),
 
               // Paragraph 2
-              Text(
+              Text
+              (
                 'Meet Kipper (grey) and Gillbert (salt-and-pepper). When this photo was taken, Kipper was 11 months and Gillbert was 4 months',
                 style: textTheme.bodyMedium?.copyWith(height: 1.4, color: GruvboxDark.fg3),
               ),
@@ -61,8 +74,8 @@ class CatPage extends StatelessWidget {
               const SizedBox(height: imageSpacing),
 
               // Paragraph 3
-              Text(
-                // Need to escape the quote inside the string
+              Text
+              (
                 "Kipper and Gillberts names both stem from a fish theme, dispite the fact that fish is a rare treat for cats in the wild. Kippers are a \"traditional dish produced by cold-smoking Atlantic herring over wooden oak chips\" and Gillberts namesake being... Gill... from a fish.",
                 style: textTheme.bodyMedium?.copyWith(height: 1.4, color: GruvboxDark.fg3),
               ),
@@ -70,16 +83,18 @@ class CatPage extends StatelessWidget {
 
               // Remaining Images (Generated in a loop)
               // Creates images 3.jpg through 21.jpg
-              ...List.generate(19, (index) {
+              ...List.generate(19, (index) 
+              {
                  final imageNumber = index + 3; // Starts from 3
-                 return Padding(
+                 return Padding
+                 (
                    // Add padding below each image in the gallery part
-                   padding: const EdgeInsets.only(bottom: imageSpacing + 5), // একটু বেশি ফাঁক
+                   padding: const EdgeInsets.only(bottom: imageSpacing + 5), 
                    child: _buildCatImage('assets/images/cats/$imageNumber.jpg'),
                  );
               }),
 
-              const SizedBox(height: 30), // Final spacing at the bottom
+              const SizedBox(height: 30), //spacing at the bottom
             ],
           ),
         ),
@@ -87,16 +102,20 @@ class CatPage extends StatelessWidget {
     );
   }
 
-  // Helper widget to build images, maybe add rounded corners later?
-  Widget _buildCatImage(String imagePath) {
-    return ClipRRect( // Optional: Add rounded corners to images
+  // Helper widgets to build images
+  Widget _buildCatImage(String imagePath) 
+  {
+    return ClipRRect( // add rounded corners to images
       borderRadius: BorderRadius.circular(8.0),
-      child: Image.asset(
+      child: Image.asset
+      (
         imagePath,
         fit: BoxFit.cover, // Adjust fit as needed
-        // Optional: Add error builder
-        errorBuilder: (context, error, stackTrace) {
-           return Container(
+        // error builder for debug
+        errorBuilder: (context, error, stackTrace) 
+        {
+           return Container
+           (
              padding: const EdgeInsets.all(20),
              color: GruvboxDark.bg1,
              child: const Center(child: Text('😿 Image not found', style: TextStyle(color: GruvboxDark.red))),

@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
-// Remove import for home_page.dart if it exists
-// import 'package:nooddev/pages/home_page.dart';
-import 'package:nooddev/pages/main_layout.dart'; // Import the new layout
+import 'package:nooddev/pages/main_layout.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() 
+{
+  runApp(const MyApp()); //run the app
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget 
+{
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Nood.dev', // Change this to your name
+  Widget build(BuildContext context) 
+  {
+    return MaterialApp 
+    (
+      title: 'Nood.dev',
       theme: buildGruvboxDarkTheme(),
       debugShowCheckedModeBanner: false,
-      // Use MainLayout as the home screen now
+      //main_Layout is the home screen now
       home: const MainLayout(),
     );
   }

@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-//import 'package:nooddev/widgets/section_title.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectsSection extends StatelessWidget {
+class ProjectsSection extends StatelessWidget 
+{
   const ProjectsSection({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Note: SectionTitle is handled by ProjectsPage now
+      children: 
+      [
 
         // --- PROJECT 1 ---
-        _buildProjectItem(
+        _buildProjectItem
+        (
           context,
           title: 'VR Sorting Algorithm Game',
           description: 'Developed a VR Sorting algorithm game. This project utilized unity and the google cardboard platform. The user is able to play and interact with the game, while being immersed in the environment. Designed to teach sorting algorithms interactively to the user in a fun and interactive environment.',
@@ -23,7 +25,8 @@ class ProjectsSection extends StatelessWidget {
         ),
 
         // --- PROJECT 2 ---
-        _buildProjectItem(
+        _buildProjectItem
+        (
           context,
           title: 'Car Sales App',
           description: 'Developed a Car Sales app for a fictitious car dealership. The user is able to shop cars listed, viewing photos and relevant information that a buyer would want to see. A car salesman can alter listings the via a GUI interface, adjusting things like price, mileage ect. Other useful tools, like a parts catalog, work orders, and payment calculator were also included.',
@@ -32,7 +35,8 @@ class ProjectsSection extends StatelessWidget {
         ),
 
         // --- PROJECT 3 ---
-         _buildProjectItem(
+         _buildProjectItem
+         (
           context,
           title: 'Guitar Shop Website',
           description: 'Developed a Guitar Shop Website wherein the user is able to shop for products, place an order and gather any relevant information a buyer looking to shell out dough for an expensive Gibson 335 or sick Ibanez Bass Guitar.',
@@ -40,7 +44,7 @@ class ProjectsSection extends StatelessWidget {
            // url: 'https://github.com/your_username/guitar-shop-repo', // Optional: Add repo link
         ),
 
-        // --- THIS WEBSITE (Keep or Modify) ---
+        // --- THIS WEBSITE ---
          _buildProjectItem(
           context,
           title: 'Personal Portfolio Website (This one!)',
@@ -52,40 +56,55 @@ class ProjectsSection extends StatelessWidget {
     );
   }
 
-  Future<void> _launchURL(String urlString) async {
+  Future<void> _launchURL(String urlString) async 
+  {
     final Uri url = Uri.parse(urlString);
-    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) 
+    {
       print('Could not launch $urlString');
     }
   }
 
-  Widget _buildProjectItem(BuildContext context, {
+  Widget _buildProjectItem(BuildContext context, 
+  {
     required String title,
     required String description,
     required List<String> technologies,
     String? url,
-  }) {
-    return Card(
+  }) 
+  {
+    return Card
+    (
        margin: const EdgeInsets.only(bottom: 20.0),
-       child: Padding(
+       child: Padding
+       (
          padding: const EdgeInsets.all(16.0),
-         child: Column(
+         child: Column
+         (
            crossAxisAlignment: CrossAxisAlignment.start,
-           children: [
-             Row(
+           children: 
+           [
+             Row
+             (
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               crossAxisAlignment: CrossAxisAlignment.start, // Align top
-               children: [
-                  Expanded( // Allow title to wrap if long
-                    child: Text(
+               crossAxisAlignment: CrossAxisAlignment.start, 
+               children: 
+               [
+                  Expanded
+                  ( // Allow title to wrap if long
+                    child: Text
+                    (
                       title,
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(color: GruvboxDark.brightGreen),
                     ),
                   ),
+
                  if (url != null)
-                   Padding( // Add padding to space out the icon
+                   Padding
+                   ( // Add padding to space out the icon
                      padding: const EdgeInsets.only(left: 8.0),
-                     child: IconButton(
+                     child: IconButton
+                     (
                        icon: const Icon(Icons.link, color: GruvboxDark.blue),
                        tooltip: 'View Project/Code',
                        onPressed: () => _launchURL(url),
@@ -99,10 +118,12 @@ class ProjectsSection extends StatelessWidget {
              const SizedBox(height: 8),
              Text(description, style: Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4)), // Add line height
              const SizedBox(height: 12),
-             Wrap(
+             Wrap
+             (
                spacing: 6.0,
                runSpacing: 4.0,
-               children: technologies.map((tech) => Chip(
+               children: technologies.map((tech) => Chip
+               (
                  label: Text(tech),
                  backgroundColor: GruvboxDark.bg3,
                  labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: GruvboxDark.fg2),

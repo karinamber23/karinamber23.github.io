@@ -5,13 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 // Source: https://github.com/morhetz/gruvbox
 class GruvboxDark {
   static const Color bg = Color(0xFF282828);
-  static const Color bg0_h = Color(0xFF1d2021); // Hard
-  static const Color bg1 = Color(0xFF3c3836); // Soft
+  static const Color bg0_h = Color(0xFF1d2021); 
+  static const Color bg1 = Color(0xFF3c3836);
   static const Color bg2 = Color(0xFF504945);
   static const Color bg3 = Color(0xFF665c54);
   static const Color bg4 = Color(0xFF7c6f64);
 
-  static const Color fg = Color(0xFFebdbb2); // Primary Foreground
+  static const Color fg = Color(0xFFebdbb2); 
   static const Color fg1 = Color(0xFFebdbb2);
   static const Color fg2 = Color(0xFFd5c4a1);
   static const Color fg3 = Color(0xFFbdae93);
@@ -25,7 +25,7 @@ class GruvboxDark {
   static const Color aqua = Color(0xFF689d6a);
   static const Color orange = Color(0xFFd65d0e);
 
-  static const Color gray = Color(0xFF928374); // Less contrast
+  static const Color gray = Color(0xFF928374); 
   static const Color brightRed = Color(0xFFfb4934);
   static const Color brightGreen = Color(0xFFb8bb26);
   static const Color brightYellow = Color(0xFFfabd2f);
@@ -35,17 +35,20 @@ class GruvboxDark {
   static const Color brightOrange = Color(0xFFfe8019);
 }
 
-ThemeData buildGruvboxDarkTheme() {
-  final baseTheme = ThemeData.dark(); // Start with dark defaults
+ThemeData buildGruvboxDarkTheme() 
+{
+  final baseTheme = ThemeData.dark(); //dark by default
 
-  return baseTheme.copyWith(
+  return baseTheme.copyWith
+  (
     brightness: Brightness.dark,
-    primaryColor: GruvboxDark.blue, // Or choose another primary
+    primaryColor: GruvboxDark.blue,
     scaffoldBackgroundColor: GruvboxDark.bg,
     cardColor: GruvboxDark.bg1,
     dividerColor: GruvboxDark.bg4,
-    hintColor: GruvboxDark.fg4, // For hints or less important text
-    textTheme: GoogleFonts.firaCodeTextTheme(baseTheme.textTheme).copyWith( // Or JetBrains Mono, Source Code Pro etc.
+    hintColor: GruvboxDark.fg4, //hint color
+    textTheme: GoogleFonts.firaCodeTextTheme(baseTheme.textTheme).copyWith
+    ( 
       // Headlines
       displayLarge: GoogleFonts.firaCode(color: GruvboxDark.fg, fontWeight: FontWeight.bold),
       displayMedium: GoogleFonts.firaCode(color: GruvboxDark.fg, fontWeight: FontWeight.bold),
@@ -65,11 +68,14 @@ ThemeData buildGruvboxDarkTheme() {
       labelSmall: GoogleFonts.firaCode(color: GruvboxDark.fg4),
       titleMedium: GoogleFonts.firaCode(color: GruvboxDark.fg2), // ListTile title
       titleSmall: GoogleFonts.firaCode(color: GruvboxDark.fg3), // ListTile subtitle
-    ).apply(
+    )
+    .apply
+    (
       bodyColor: GruvboxDark.fg1, // Default text color
       displayColor: GruvboxDark.fg, // Default headline color
     ),
-    colorScheme: const ColorScheme(
+    colorScheme: const ColorScheme
+    (
       brightness: Brightness.dark,
       primary: GruvboxDark.blue,
       onPrimary: GruvboxDark.bg, // Text on primary buttons
@@ -82,49 +88,62 @@ ThemeData buildGruvboxDarkTheme() {
       tertiary: GruvboxDark.yellow,
       onTertiary: GruvboxDark.bg,
     ),
-    appBarTheme: const AppBarTheme(
+    appBarTheme: const AppBarTheme
+    (
       backgroundColor: GruvboxDark.bg1,
       foregroundColor: GruvboxDark.fg, // Title and icons
       elevation: 1,
     ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
+    elevatedButtonTheme: ElevatedButtonThemeData
+    (
+      style: ElevatedButton.styleFrom
+      (
         backgroundColor: GruvboxDark.blue,
         foregroundColor: GruvboxDark.bg,
         textStyle: GoogleFonts.firaCode(fontWeight: FontWeight.bold),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-         shape: RoundedRectangleBorder(
+         shape: RoundedRectangleBorder
+         (
            borderRadius: BorderRadius.circular(8),
          ),
       ),
     ),
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
+    textButtonTheme: TextButtonThemeData
+    (
+      style: TextButton.styleFrom
+      (
          foregroundColor: GruvboxDark.brightBlue,
          textStyle: GoogleFonts.firaCode(fontWeight: FontWeight.w500),
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardTheme
+    (
       elevation: 2,
       color: GruvboxDark.bg1,
-       shape: RoundedRectangleBorder(
+       shape: RoundedRectangleBorder
+       (
          borderRadius: BorderRadius.circular(8),
          side: const BorderSide(color: GruvboxDark.bg3, width: 0.5),
        ),
        margin: const EdgeInsets.symmetric(vertical: 8.0),
     ),
-     listTileTheme: const ListTileThemeData(
+     listTileTheme: const ListTileThemeData
+     (
         iconColor: GruvboxDark.aqua,
      ),
-    iconTheme: const IconThemeData(
+    iconTheme: const IconThemeData
+    (
       color: GruvboxDark.aqua, // Default icon color
     ),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData
+    (
       backgroundColor: GruvboxDark.orange,
       foregroundColor: GruvboxDark.bg,
     ),
-    tooltipTheme: TooltipThemeData(
-      decoration: BoxDecoration(
+    tooltipTheme: TooltipThemeData
+    (
+      decoration: BoxDecoration
+      (
         color: GruvboxDark.bg3,
         borderRadius: BorderRadius.circular(4),
       ),

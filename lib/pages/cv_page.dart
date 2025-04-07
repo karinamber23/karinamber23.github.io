@@ -7,19 +7,26 @@ import 'package:nooddev/widgets/hero_section.dart';
 import 'package:nooddev/widgets/skills_section.dart';
 import 'package:nooddev/widgets/education_section.dart'; // <-- IMPORT
 
-class CvPage extends StatelessWidget {
+class CvPage extends StatelessWidget 
+{
   const CvPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ConstrainedBox(
+  Widget build(BuildContext context) 
+  {
+    return Center
+    (
+      child: ConstrainedBox
+      (
         constraints: const BoxConstraints(maxWidth: 900),
-        child: SingleChildScrollView(
+        child: SingleChildScrollView
+        (
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 30.0),
-          child: Column(
+          child: Column
+          (
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: <Widget>
+            [
               const HeroSection(),
               const SizedBox(height: 40),
               const AboutSection(),

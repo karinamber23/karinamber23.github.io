@@ -4,95 +4,106 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nooddev/theme/gruvbox_theme.dart';
 
-class ContactSection extends StatelessWidget {
+class ContactSection extends StatelessWidget 
+{
   const ContactSection({super.key});
 
-  Future<void> _launchURL(String urlString) async {
+  Future<void> _launchURL(String urlString) async 
+  {
     final Uri url = Uri.parse(urlString);
-     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) 
+    {
       print('Could not launch $urlString');
     }
   }
 
-  Future<void> _launchEmail(String email) async {
-     final Uri emailLaunchUri = Uri(
+  Future<void> _launchEmail(String email) async 
+  {
+     final Uri emailLaunchUri = Uri
+     (
        scheme: 'mailto',
        path: email,
        query: 'subject=Contact%20from%20Portfolio%20Website',
      );
-     if (!await launchUrl(emailLaunchUri)) {
+     if (!await launchUrl(emailLaunchUri)) 
+     {
        print('Could not launch email to $email');
      }
    }
 
   @override
-  Widget build(BuildContext context) {
-    // --- UPDATED DETAILS ---
+  Widget build(BuildContext context) 
+  {
     const String email = 'alex@nood.dev';
     const String githubUrl = 'https://github.com/nood-leog';
     const String linkedinUrl = 'https://linkedin.com/in/nood-leog';
-    // const String websiteUrl = 'https://nood.dev'; // Website link is usually in AppBar/Footer
+    // const String websiteUrl = 'https://nood.dev';
 
-    return Column(
+    return Column
+    (
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: 
+      [
         const SectionTitle('Get In Touch'),
         Text(
-          "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to connect with me!", // Keep or update
+          "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to shoot me a message!", 
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(height: 20),
-        Wrap(
+        Wrap
+        (
           spacing: 15.0,
           runSpacing: 10.0,
-          children: <Widget>[
-            _buildContactButton(
+          children: <Widget>
+          [
+            _buildContactButton
+            (
               context,
               icon: Icons.email,
               label: 'Email',
               tooltip: email,
               onPressed: () => _launchEmail(email),
             ),
-            _buildContactButton(
+
+            _buildContactButton
+            (
               context,
               icon: FontAwesomeIcons.github,
               label: 'GitHub',
               tooltip: 'View GitHub Profile',
               onPressed: () => _launchURL(githubUrl),
             ),
-             _buildContactButton(
+            _buildContactButton
+            (
               context,
               icon: FontAwesomeIcons.linkedin,
               label: 'LinkedIn',
               tooltip: 'View LinkedIn Profile',
               onPressed: () => _launchURL(linkedinUrl),
             ),
-            // Optional: Add website button if desired, though redundant with AppBar
-            // _buildContactButton(
-            //   context,
-            //   icon: FontAwesomeIcons.link,
-            //   label: 'Website',
-            //   tooltip: 'Visit nood.dev',
-            //   onPressed: () => _launchURL(websiteUrl),
-            // ),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildContactButton(BuildContext context, {
+  Widget _buildContactButton(BuildContext context, 
+  {
     required IconData icon,
     required String label,
     required String tooltip,
     required VoidCallback onPressed,
-  }) {
-    return Tooltip(
+  }) 
+  {
+    return Tooltip
+    (
       message: tooltip,
-      child: TextButton.icon(
+      child: TextButton.icon
+      (
         icon: FaIcon(icon, size: 20, color: GruvboxDark.aqua),
         label: Text(label),
-        style: TextButton.styleFrom(
+        style: TextButton.styleFrom
+        (
           foregroundColor: GruvboxDark.fg2,
            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
            textStyle: Theme.of(context).textTheme.bodyMedium
